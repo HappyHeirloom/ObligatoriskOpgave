@@ -1,0 +1,9 @@
+C:\Users\Jonas\source\repos\Fan\Fan\bin\Debug\netcoreapp3.1\Fan.deps.json
+C:\Users\Jonas\source\repos\Fan\Fan\bin\Debug\netcoreapp3.1\Fan.dll
+C:\Users\Jonas\source\repos\Fan\Fan\bin\Debug\netcoreapp3.1\Fan.pdb
+C:\Users\Jonas\source\repos\Fan\Fan\obj\Debug\netcoreapp3.1\Fan.csprojAssemblyReference.cache
+C:\Users\Jonas\source\repos\Fan\Fan\obj\Debug\netcoreapp3.1\Fan.AssemblyInfoInputs.cache
+C:\Users\Jonas\source\repos\Fan\Fan\obj\Debug\netcoreapp3.1\Fan.AssemblyInfo.cs
+C:\Users\Jonas\source\repos\Fan\Fan\obj\Debug\netcoreapp3.1\Fan.csproj.CoreCompileInputs.cache
+C:\Users\Jonas\source\repos\Fan\Fan\obj\Debug\netcoreapp3.1\Fan.dll
+C:\Users\Jonas\source\repos\Fan\Fan\obj\Debug\netcoreapp3.1\Fan.pdb
