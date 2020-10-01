@@ -16,7 +16,7 @@ namespace FanServer
     class Server
     {
         //Output objects
-        private static readonly List<FanOutput> FanServerList = GetAllFanOutputs();
+        private static List<FanOutput> FanServerList = GetAllFanOutputs();
         private static readonly FanOutput FanFromId = GetFanFromID(0);
 
         //JSON lists
@@ -28,7 +28,7 @@ namespace FanServer
 
         private static int _clientNr = 0;
 
-        private static string serverOutput = "Enter an input.. I.e HentAlle, HentID, Gem. To exit the program, please write exit";
+        private static string serverOutput = "Enter an input.. I.e HentAlle, Hent, Gem. To exit the program, please write exit";
 
 
         public static void StartServer()
@@ -82,6 +82,7 @@ namespace FanServer
                             switch (userInput.ToString().ToLower())
                             {
                                 case "hentalle":
+                                    UpdateList();
                                     foreach (var fan in FanServerList)
                                     {
                                         var json = JsonConvert.SerializeObject(fan);
@@ -90,21 +91,23 @@ namespace FanServer
                                         writer.WriteLine(serverOutput + ",");
                                     }
                                     correctInput = true;
+                                    OutputStandardMessage(writer);
                                     break;
-                                case "hentid":
+                                case "hent":
+                                    UpdateList();
                                     while (rightId == false)
                                     {
-                                        serverOutput = $"Enter an id between 0 and {FanServerList.Count - 1}";
+                                        serverOutput = $"Enter an id between 1 and {FanServerList.Count}";
                                         Console.WriteLine($"Sending '{serverOutput}' to client.");
                                         writer.WriteLine(serverOutput);
                                         userInput = reader.ReadLine();
                                         if (userInput != null)
                                         {
                                             int userInputAsInt = Convert.ToInt32(userInput);
-                                            if (userInputAsInt >= 0 && userInputAsInt <= FanServerList.Count - 1)
+                                            if (userInputAsInt >= 1 && userInputAsInt <= FanServerList.Count)
                                             {
                                                 var json = JsonConvert.SerializeObject(
-                                                    GetFanFromID(Convert.ToInt32(userInput)));
+                                                    GetFanFromID(userInputAsInt));
                                                 serverOutput = json;
                                                 Console.WriteLine($"Sending '{serverOutput}' to client.");
                                                 writer.WriteLine(serverOutput);
@@ -114,73 +117,112 @@ namespace FanServer
                                     }
                                     rightId = false;
                                     correctInput = true;
+                                    OutputStandardMessage(writer);
                                     break;
                                 case "gem":
-                                    int FanId = FanServerList.Count;
-                                    string name = "";
-                                    int temp = 15;
-                                    int humid = 30;
+                                    UpdateList();
                                     bool rightName = false;
                                     bool rightTemp = false;
                                     bool rightHumid = false;
 
-                                    while (rightHumid == false)
+                                    serverOutput = "Do you want to input as text or json?";
+                                    Console.WriteLine($"Sending '{serverOutput}' to client.");
+                                    writer.WriteLine(serverOutput);
+
+                                    userInput = reader.ReadLine();
+
+                                    switch (userInput.ToLower())
                                     {
-                                        while (rightTemp == false)
-                                        {
-                                            while (rightName == false)
+                                        case "text":
+                                            int FanId = FanServerList.Count + 1;
+                                            string name = "";
+                                            int temp = 15;
+                                            int humid = 30;
+                                            while (rightHumid == false)
                                             {
-                                                serverOutput = "Enter a fan name: (min 2. characters)";
+                                                while (rightTemp == false)
+                                                {
+                                                    while (rightName == false)
+                                                    {
+                                                        serverOutput = "Enter a fan name: (min 2. characters)";
+                                                        Console.WriteLine($"Sending '{serverOutput}' to client.");
+                                                        writer.WriteLine(serverOutput);
+
+                                                        userInput = reader.ReadLine();
+                                                        if (userInput != null && userInput.Length >= 2)
+                                                        {
+                                                            name = userInput;
+                                                            rightName = true;
+                                                        }
+                                                    }
+                                                    serverOutput = "Enter the temperature: (Must be between 15 and 25)";
+                                                    Console.WriteLine($"Sending '{serverOutput}' to client.");
+                                                    writer.WriteLine(serverOutput);
+
+                                                    userInput = reader.ReadLine();
+                                                    int userInputAsIntTemp = Convert.ToInt32(userInput);
+                                                    if (userInputAsIntTemp >= 15 && userInputAsIntTemp <= 25)
+                                                    {
+                                                        temp = userInputAsIntTemp;
+                                                        rightTemp = true;
+                                                    }
+                                                }
+                                                serverOutput = "Enter the temperature: (Must be between 30 and 80)";
                                                 Console.WriteLine($"Sending '{serverOutput}' to client.");
                                                 writer.WriteLine(serverOutput);
 
                                                 userInput = reader.ReadLine();
-                                                if (userInput != null && userInput.Length >= 2)
+                                                int userInputAsIntHumid = Convert.ToInt32(userInput);
+                                                if (userInputAsIntHumid >= 30 && userInputAsIntHumid <= 80)
                                                 {
-                                                    name = userInput;
-                                                    rightName = true;
+                                                    humid = userInputAsIntHumid;
+                                                    rightHumid = true;
                                                 }
                                             }
-                                            serverOutput = "Enter the temperature: (Must be between 15 and 25)";
+                                            SaveFan(FanId, name, temp, humid);
+                                            serverOutput =
+                                                "Created fan with " +
+                                                $"id = {FanId} and a " +
+                                                $"name = {name} with a " +
+                                                $"temperature of {temp} and a " +
+                                                $"humidity of {humid}";
+                                            Console.WriteLine($"Sending '{serverOutput}' to client.");
+                                            writer.WriteLine(serverOutput);
+                                            break;
+                                        case "json":
+                                            serverOutput = "Enter a json string";
                                             Console.WriteLine($"Sending '{serverOutput}' to client.");
                                             writer.WriteLine(serverOutput);
 
-                                            userInput = reader.ReadLine();
-                                            int userInputAsIntTemp = Convert.ToInt32(userInput);
-                                            if (userInputAsIntTemp >= 15 && userInputAsIntTemp <= 25)
-                                            {
-                                                temp = userInputAsIntTemp;
-                                                rightTemp = true;
-                                            }
-                                        }
-                                        serverOutput = "Enter the temperature: (Must be between 30 and 80)";
-                                        Console.WriteLine($"Sending '{serverOutput}' to client.");
-                                        writer.WriteLine(serverOutput);
+                                            serverOutput = $"e.g. {GetFanFromID(3)} but without id. ";
 
-                                        userInput = reader.ReadLine();
-                                        int userInputAsIntHumid = Convert.ToInt32(userInput);
-                                        if (userInputAsIntHumid >= 30 && userInputAsIntHumid <= 80)
-                                        {
-                                            humid = userInputAsIntHumid;
-                                            rightHumid = true;
-                                        }
+                                            userInput = reader.ReadLine();
+
+                                            var userInputAsObj = JsonConvert.DeserializeObject<FanOutput>(userInput);
+
+                                            userInputAsObj.Id = FanServerList.Count + 1;
+
+                                            SaveFanJson(userInputAsObj);
+
+                                            serverOutput = userInputAsObj.ToString();
+                                            Console.WriteLine($"Sending '{serverOutput}' to client.");
+                                            writer.WriteLine(serverOutput);
+
+                                            break;
+
+                                        default:
+                                            serverOutput = "Enter a valid input. 'text' or 'json'";
+                                            Console.WriteLine($"Sending '{serverOutput}' to client.");
+                                            writer.WriteLine(serverOutput);
+                                            break;
                                     }
 
-
-                                    SaveFan(FanId, name, temp, humid);
-                                    serverOutput =
-                                        "Created fan with " +
-                                        $"id = {FanId} and a " +
-                                        $"name = {name} with a " +
-                                        $"temperature of {temp} and a " +
-                                        $"humidity of {humid}";
-                                    Console.WriteLine($"Sending '{serverOutput}' to client.");
-                                    writer.WriteLine(serverOutput);
 
                                     rightName = false;
                                     rightTemp = false;
                                     rightHumid = false;
                                     correctInput = true;
+                                    OutputStandardMessage(writer);
                                     break;
                                 case "exit":
                                     Console.WriteLine("Exit");
@@ -196,12 +238,6 @@ namespace FanServer
                             }
                         }
                     }
-                    // Rewrite users option to client
-                    serverOutput = "Enter an input.. I.e HentAlle, HentID, Gem. To exit the program, please write exit";
-                    Console.WriteLine("");
-                    Console.WriteLine($"Sending '{serverOutput}' to client.");
-                    writer.WriteLine("");
-                    writer.WriteLine(serverOutput);
                     correctInput = false;
                 }
 
@@ -226,6 +262,16 @@ namespace FanServer
             _clientNr--;
             Console.WriteLine($"User disconnected... current number of users: {_clientNr}");
 
+        }
+
+        public static void OutputStandardMessage(StreamWriter writer)
+        {
+            // Rewrite users option to client
+            serverOutput = "Enter an input.. I.e HentAlle, Hent, Gem. To exit the program, please write exit";
+            Console.WriteLine("");
+            Console.WriteLine($"Sending '{serverOutput}' to client.");
+            writer.WriteLine("");
+            writer.WriteLine(serverOutput);
         }
 
         public static List<FanOutput> GetAllFanOutputs()
@@ -262,8 +308,25 @@ namespace FanServer
         public static void SaveFan(int id, string name, int temp, int humid)
         {
             FanOutput savedFan = new FanOutput(name,temp,humid);
+            FanOutPutController con = new FanOutPutController();
 
-            FanServerList.Add(savedFan);
+            con.Post(savedFan);
+
+            //FanServerList.Add(savedFan);
+        }
+
+        public static void SaveFanJson(FanOutput el)
+        {
+            FanOutPutController con = new FanOutPutController();
+
+            con.Post(el);
+        }
+
+        public static void UpdateList()
+        {
+            var updatedList = GetAllFanOutputs();
+
+            FanServerList = updatedList;
         }
 
     }
