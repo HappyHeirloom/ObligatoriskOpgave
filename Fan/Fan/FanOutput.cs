@@ -6,6 +6,7 @@ namespace Fan
     public class FanOutput
     {
         //private int _id;
+        private static int _id = 0;
         private string _name;
         private int _temp;
         private int _fugt;
@@ -13,12 +14,13 @@ namespace Fan
 
         public FanOutput() { }
 
-        public FanOutput(int id, string name, int temp, int fugt)
+        public FanOutput(string name, int temp, int fugt)
         {
+            _id++;
             CheckName(name);
             CheckTemp(temp);
             CheckFugt(fugt);
-            Id = id;
+            Id = _id;
             Name = name;
             Temp = temp;
             Fugt = fugt;

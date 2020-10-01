@@ -18,12 +18,12 @@ namespace FanREST.Controllers
         // Create list of fanoutputs
         private static List<FanOutput> FanList = new List<FanOutput>()
         {
-            new FanOutput(0, "Jonas", 15, 50),
-            new FanOutput(1, "Alex", 20, 40),
-            new FanOutput(2, "Punisher2000", 25, 32),
-            new FanOutput(3, "Blabla", 23, 67),
-            new FanOutput(4, "Ko", 21, 46),
-            new FanOutput(5, "Tyr", 18, 55),
+            new FanOutput("FanRoom2001", 15, 50),
+            new FanOutput("FanRoom189", 20, 40),
+            new FanOutput("FanRoom20", 25, 32),
+            new FanOutput("FanRoom301", 23, 67),
+            new FanOutput("FanRoom809", 21, 46),
+            new FanOutput("FanRoom13201", 18, 55),
 
         };
 

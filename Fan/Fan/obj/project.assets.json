@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj",
+      "projectUniqueName": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj",
       "projectName": "Fan",
-      "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj",
+      "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj",
       "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\obj\\",
+      "outputPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

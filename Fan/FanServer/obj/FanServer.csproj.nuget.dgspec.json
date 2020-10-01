@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jonas\\source\\repos\\Fan\\FanServer\\FanServer.csproj": {}
+    "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanServer\\FanServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jonas\\source\\repos\\Fan\\FanREST\\FanREST.csproj": {
+    "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanREST\\FanREST.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanREST\\FanREST.csproj",
+        "projectUniqueName": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanREST\\FanREST.csproj",
         "projectName": "FanREST",
-        "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanREST\\FanREST.csproj",
+        "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanREST\\FanREST.csproj",
         "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanREST\\obj\\",
+        "outputPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanREST\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj": {
-                "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj"
+              "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj": {
+                "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj"
               }
             }
           }
@@ -68,14 +68,14 @@
         }
       }
     },
-    "C:\\Users\\Jonas\\source\\repos\\Fan\\FanServer\\FanServer.csproj": {
+    "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanServer\\FanServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanServer\\FanServer.csproj",
+        "projectUniqueName": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanServer\\FanServer.csproj",
         "projectName": "FanServer",
-        "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanServer\\FanServer.csproj",
+        "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanServer\\FanServer.csproj",
         "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanServer\\obj\\",
+        "outputPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -96,11 +96,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Jonas\\source\\repos\\Fan\\FanREST\\FanREST.csproj": {
-                "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanREST\\FanREST.csproj"
+              "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanREST\\FanREST.csproj": {
+                "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanREST\\FanREST.csproj"
               },
-              "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj": {
-                "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj"
+              "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj": {
+                "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj"
               }
             }
           }
@@ -141,14 +141,14 @@
         }
       }
     },
-    "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj": {
+    "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj",
+        "projectUniqueName": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj",
         "projectName": "Fan",
-        "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj",
+        "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj",
         "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\obj\\",
+        "outputPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

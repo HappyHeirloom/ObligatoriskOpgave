@@ -5730,11 +5730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanTests\\FanTests.csproj",
+      "projectUniqueName": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanTests\\FanTests.csproj",
       "projectName": "FanTests",
-      "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanTests\\FanTests.csproj",
+      "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanTests\\FanTests.csproj",
       "packagesPath": "C:\\Users\\Jonas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\FanTests\\obj\\",
+      "outputPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\FanTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -5755,8 +5755,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj": {
-              "projectPath": "C:\\Users\\Jonas\\source\\repos\\Fan\\Fan\\Fan.csproj"
+            "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj": {
+              "projectPath": "C:\\Users\\Jonas\\Desktop\\Uni - Zealand - Copy\\Technology\\Obligatorisk-opgave\\Fan\\Fan\\Fan.csproj"
             }
           }
         }
