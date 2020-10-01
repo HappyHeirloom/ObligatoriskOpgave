@@ -71,7 +71,6 @@ namespace FanServer
                 bool exit = false;
                 var rightId = false;
 
-
                 while (exit == false)
                 {
                     while (correctInput == false)
@@ -88,7 +87,7 @@ namespace FanServer
                                         var json = JsonConvert.SerializeObject(fan);
                                         serverOutput = json;
                                         Console.WriteLine($"Sending '{serverOutput}' to client.");
-                                        writer.WriteLine(serverOutput);
+                                        writer.WriteLine(serverOutput + ",");
                                     }
                                     correctInput = true;
                                     break;
