@@ -209,7 +209,17 @@ namespace FanServer
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                if (e.Message == 
+                    "Unable to read data from the transport connection: En eksisterende forbindelse blev tvangsafbrudt af en ekstern vært.."
+                    || e.Message == "Unable to read data from the transport connection: An existing connection was forcibly closed by the remote host.."
+                    )
+                {
+                    ns.Close();
+                    _clientNr--;
+                    Console.WriteLine($"User disconnected... current number of users: {_clientNr}");
+                }
+
+                Console.WriteLine(e.Message);
                 throw;
             }
 
