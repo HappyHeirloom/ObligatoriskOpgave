@@ -307,7 +307,7 @@ namespace FanServer
 
         public static void SaveFan(int id, string name, int temp, int humid)
         {
-            FanOutput savedFan = new FanOutput(name,temp,humid);
+            FanOutput savedFan = new FanOutput(id, name,temp,humid);
             FanOutPutController con = new FanOutPutController();
 
             con.Post(savedFan);

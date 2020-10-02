@@ -14,7 +14,7 @@ namespace Fan
 
         public FanOutput() { }
 
-        public FanOutput(string name, int temp, int fugt)
+        public FanOutput(int id, string name, int temp, int fugt)
         {
             _id++;
             CheckName(name);
